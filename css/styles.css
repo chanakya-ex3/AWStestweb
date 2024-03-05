@@ -1,0 +1,29 @@
+html{
+    background-color: #a0fdfd;
+    
+}
+body{
+    margin: 0px;
+    text-align:center;
+    font-family: 'Nova Mono', monospace;
+}
+#TopContainer{
+    width: 100%;
+    padding-left: 0;
+    position: relative;
+    padding-top: 100px;
+}
+#cloud1{
+    position: absolute;
+    right: 300px;
+    top:50px
+}
+#cloud2{
+    position:absolute;
+    left: 300px;
+    bottom: 300px;
+}
+.test{
+    text-decoration: underline;
+}
+
