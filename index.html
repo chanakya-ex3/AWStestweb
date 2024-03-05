@@ -29,22 +29,24 @@
         <img src="images/mountain.png" alt="mountain-png">
         <p>This is a sample web created to host on AWS</p>  
         <p>Your IP Address:</p>
-        <p id="ipAddress">Loading...</p>
+        <p id="ipAddress">loading....</p>
 
         <script>
-            console.log("hostname : " + location.hostname);
-            // Function to fetch the IP address
-            function getIpAddress() {
-                fetch('https://api.ipify.org?format=json')
-                    .then(response => response.json())
-                    .then(data => {
-                        const ipAddressElement = document.getElementById('ipAddress');
-                        ipAddressElement.textContent = data.ip;
-                    })
-                    .catch(error => {
-                        console.error('Error fetching IP address:', error);
-                    });
-            }
+            const ipAddressElement = document.getElementById('ipAddress');
+            ipAddressElement.textContent = location.hostname;
+            // console.log("hostname : " + location.hostname);
+            // // Function to fetch the IP address
+            // function getIpAddress() {
+            //     fetch('https://api.ipify.org?format=json')
+            //         .then(response => response.json())
+            //         .then(data => {
+            //             const ipAddressElement = document.getElementById('ipAddress');
+            //             ipAddressElement.textContent = data.ip;
+            //         })
+            //         .catch(error => {
+            //             console.error('Error fetching IP address:', error);
+            //         });
+            // }
 
             // Call the function when the page loads
             document.addEventListener('DOMContentLoaded', getIpAddress);
