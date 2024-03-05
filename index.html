@@ -1,1 +1,55 @@
-<h1>Hello from $(hostname -f)</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="css/favicon.ico">
+    <title>Chanakya BM</title>
+</head>
+
+<body>
+    <div id="NavBar"></div>
+    <div id="TopContainer">
+        <p>
+            <img id="cloud1" src="images/cloud.png" alt="cloud-img">
+        <h1>Chanakya BM</h1>
+        <p>AWS Certified Solutions Architect</p>
+        <p>Full Stack Developer</p>
+        <p>3rd year <strong>Btech</strong> in <br> <em>Computer, Science & Engineering</em>
+            <br> at <em><strong>
+                    <a href="https://vit.ac.in" target="_blank"> Vellore Institute of Technology</a></strong></em>
+        </p>
+        <img id="cloud2" src="images/cloud.png" alt="cloud-png">
+        <img src="images/mountain.png" alt="mountain-png">
+        <p>This is a sample web created to host on AWS</p>  
+        <p>Your IP Address:</p>
+        <p id="ipAddress">Loading...</p>
+
+        <script>
+            console.log("hostname : " + location.hostname);
+            // Function to fetch the IP address
+            function getIpAddress() {
+                fetch('https://api.ipify.org?format=json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const ipAddressElement = document.getElementById('ipAddress');
+                        ipAddressElement.textContent = data.ip;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching IP address:', error);
+                    });
+            }
+
+            // Call the function when the page loads
+            document.addEventListener('DOMContentLoaded', getIpAddress);
+        </script>
+    </div>
+</body>
+
+</html>
