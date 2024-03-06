@@ -28,22 +28,8 @@
         <img id="cloud2" src="images/cloud.png" alt="cloud-png">
         <img src="images/mountain.png" alt="mountain-png">
         <p>This is a sample web created to host on AWS</p>
-        <p>Your IP Address:</p>
-        <p id="ipAddress">loading....</p>
-
-        <script>
-            fetch('https://ipinfo.io/json')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('ipAddress').textContent = data.ip;
-                })
-                .catch(error => {
-                    console.error('Error fetching IP address:', error);
-                });
-        </script>
+        <a href="data.html"><button>click here to check IP</button></a>
     </div>
 </body>
 
 </html>
-
-<h1>Hello from $(hostname -f)</h1>
